@@ -46,5 +46,4 @@ namespace GeniusNote{
 		close(clnt_sock);
     	close(serv_sock);
 	}
-
 }
