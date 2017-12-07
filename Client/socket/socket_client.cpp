@@ -13,7 +13,7 @@
 
 namespace GeniusNote{
 		int ClientSocket::init(int port){
-		in_addr_t clientIP = inet_addr("127.0.0.1");
+		in_addr_t clientIP = inet_addr("0.0.0.0");
 
 		int sockfd = socket(AF_INET, SOCK_STREAM, 0);
 		if(sockfd==-1){
@@ -55,7 +55,7 @@ namespace GeniusNote{
   	server.sin_family = AF_INET;
   	server.sin_port = htons(serverPort);
 
-  	printf("conn:%d\n",this->sockfd);
+  	printf("conn:%d\n",(int)sizeof(server));
 
   	int flag = connect(this->sockfd,(const struct sockaddr *)&server,(socklen_t)sizeof(server));
   	if(flag==-1){
@@ -70,12 +70,12 @@ namespace GeniusNote{
 	}
 
 	long ClientSocket::csend(void *buf, size_t size){
-		ssize_t sendSize = send(sockfd, buf, size, 0);
+		ssize_t sendSize = send(this->sockfd, buf, size, 0);
 		return sendSize;
 	}
 
 	int ClientSocket::crecv(void *buf, size_t size){
-		ssize_t recvSize = recv(sockfd, buf, size, 0);
+		ssize_t recvSize = recv(this->sockfd, buf, size, 0);
 		return recvSize;
 	}
 

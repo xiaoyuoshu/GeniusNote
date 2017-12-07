@@ -8,7 +8,7 @@ int main(int argc,char* argv[]){
 	printf("run success!\n");
 	ServerSocket server;
 
-	int sockfd = server.init(2333);
+	int sockfd = server.init(23333);
 	int start = server.startServer();
 	int acc = server.acceptCon();
 
