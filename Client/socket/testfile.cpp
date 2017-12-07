@@ -6,8 +6,8 @@ using namespace GeniusNote;
 
 int main(int argc,char* argv[]){
 	ClientSocket client;
-	int sockfd = client.init(1234);
-	int con = client.conn("107.170.198.120",1234);
+	int sockfd = client.init(2334);
+	int con = client.conn("127.0.0.1",2333);
 
 	fgets(buf,50,stdin);
 

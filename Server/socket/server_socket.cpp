@@ -15,7 +15,7 @@
 namespace GeniusNote{
 	
 	int ServerSocket::init(int port){
-		
+
 		int sockfd = socket(AF_INET,SOCK_STREAM,IPPROTO_TCP);
 
 		if(sockfd==-1){
@@ -31,7 +31,7 @@ namespace GeniusNote{
 		serv_addr.sin_addr.s_addr = inet_addr("127.0.0.1");
 		serv_addr.sin_port = htons(port);
 
-		this->port = htons(1234);
+		this->port = port;
 		this->sockfd=sockfd;
 		this->serverAddr=serv_addr;
 
