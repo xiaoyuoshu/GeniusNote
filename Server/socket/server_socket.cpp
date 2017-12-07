@@ -34,6 +34,12 @@ namespace GeniusNote{
 
 	int ServerSocket::startServer(){
 		int flag = listen(this->sockfd,this->port);
+		if(flag==-1){
+			cout<<"listen fault"<<;
+		}else{
+			cout<<"listen success"<<;
+		}
+
 		return flag;
 	}
 
@@ -42,6 +48,11 @@ namespace GeniusNote{
     	socklen_t clnt_addr_size =sizeof(clnt_addr);
 
     	int clientfd = accept(this->sockfd,(struct sockaddr*)&clnt_addr,&clnt_addr_size);
+    	if(flag==-1){
+			cout<<"accept fault"<<;
+		}else{
+			cout<<"accept success"<<;
+		}
 
     	return clientfd;
 	}
