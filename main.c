@@ -1,9 +1,10 @@
 #include <iostream>
 
 int main(){
-	//创建用户
+	//creat user
 
-	//添加，删除记录
+	//add delete note
+	
 
 	
 }
