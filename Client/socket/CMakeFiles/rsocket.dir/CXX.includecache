@@ -23,6 +23,8 @@ thread
 -
 cstring
 -
+iostream
+-
 socket_client.h
 /home/geniusrabbit/home/GeniusNote/Client/socket/socket_client.h
 

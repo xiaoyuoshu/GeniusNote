@@ -6,6 +6,7 @@
 #include <arpa/inet.h>
 #include <thread>
 #include <cstring>
+#include <iostream>
 
 #include "socket_client.h"
 //#include "../log/log.h"
@@ -13,12 +14,12 @@
 namespace GeniusNote{
 		int ClientSocket::init(int port){
 		in_addr_t clientIP = inet_addr("0.0.0.0");
-		int sockfd = socket(AF_INET, SOCK_STREAM, 0);
 
+		int sockfd = socket(AF_INET, SOCK_STREAM, 0);
 		if(sockfd==-1){
-			cout<<"create socket fault"<<;
+			printf("create socket fault");
 		}else{
-			cout<<"create socket success"<<;
+			printf("create socket success");
 		}
 
 		sockaddr_in clientSockAddr;
@@ -30,9 +31,9 @@ namespace GeniusNote{
 
   	int flag = bind(sockfd, (sockaddr* )&clientSockAddr, sizeof(clientSockAddr));
   	if(flag==-1){
-			cout<<"bind fault"<<;
+			printf("bind fault");
 		}else{
-			cout<<"bind success"<<;
+			printf("bind success");
 		}
 
   	this->port=htons(port);
@@ -53,9 +54,9 @@ namespace GeniusNote{
 
   	int flag = connect(this->sockfd,(const struct sockaddr *)&server,(socklen_t)sizeof(server));
   	if(flag==-1){
-			cout<<"connect fault"<<;
+			printf("connect fault");
 		}else{
-			cout<<"connect success"<<;
+			printf("connect success");
 		}
   	this->serverSockAddr = server;
 

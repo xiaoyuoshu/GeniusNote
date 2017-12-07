@@ -8,6 +8,7 @@
 #include <arpa/inet.h>
 #include <thread>
 #include <cstring>
+#include <iostream>
 
 //#include "../log/log.h"
 
@@ -15,6 +16,11 @@ namespace GeniusNote{
 	
 	int ServerSocket::init(int port){
 		int sockfd = socket(AF_INET,SOCK_STREAM,IPPROTO_TCP);
+		if(sockfd==-1){
+			printf("create socket fault");
+		}else{
+			printf("create socket success");
+		}
 
 		struct sockaddr_in serv_addr;
 		memset(&serv_addr,0,sizeof(serv_addr));
@@ -35,9 +41,9 @@ namespace GeniusNote{
 	int ServerSocket::startServer(){
 		int flag = listen(this->sockfd,this->port);
 		if(flag==-1){
-			cout<<"listen fault"<<;
+			printf("listen fault");
 		}else{
-			cout<<"listen success"<<;
+			printf("listen success");
 		}
 
 		return flag;
@@ -48,10 +54,10 @@ namespace GeniusNote{
     	socklen_t clnt_addr_size =sizeof(clnt_addr);
 
     	int clientfd = accept(this->sockfd,(struct sockaddr*)&clnt_addr,&clnt_addr_size);
-    	if(flag==-1){
-			cout<<"accept fault"<<;
+    	if(clientfd==-1){
+			printf("accept fault");
 		}else{
-			cout<<"accept success"<<;
+			printf("accept success");
 		}
 
     	return clientfd;
