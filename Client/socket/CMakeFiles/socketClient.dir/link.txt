@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/socketClient.dir/testfile.cpp.o  -o socketClient -rdynamic librsocket.a 

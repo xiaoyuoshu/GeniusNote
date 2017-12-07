@@ -1,11 +1,15 @@
-#include <stdio.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <string.h>
-#include <arpa/inet.h>
+#include "server_socket.h"
 
-#include "Socket.h"
-#include "../log/log.h"
+#include <cstdio>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <unistd.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <thread>
+#include <cstring>
+
+//#include "../log/log.h"
 
 namespace GeniusNote{
 	
@@ -25,38 +29,38 @@ namespace GeniusNote{
 
 		int flag = bind(sockfd,(struct sockaddr*)&serv_addr,sizeof(sockaddr));
 
-		return serv_sock;
+		return flag;
 	}
 
 	int ServerSocket::startServer(){
 		int flag = listen(this->sockfd,this->port);
-		return falg;
+		return flag;
 	}
 
-	int ServerSocket::acceptCon(int socket){
+	int ServerSocket::acceptCon(){
 		struct sockaddr_in clnt_addr;
-    socklen_t clnt_addr_size =sizeof(clnt_addr);
+    	socklen_t clnt_addr_size =sizeof(clnt_addr);
 
-    int clientfd = accept(serv_sock,(struct sockaddr*)&clnt_addr,&clnt_addr_size);
+    	int clientfd = accept(this->sockfd,(struct sockaddr*)&clnt_addr,&clnt_addr_size);
 
-    return clientfd;
+    	return clientfd;
 	}
 
 	int ServerSocket::sendNote(int sockfd,void* buf,size_t size){
-    ssize_t sendSize = send(sockfd, buf, size, 0);
-    return sendSize;
+    	ssize_t sendSize = send(sockfd, buf, size, 0);
+    	return sendSize;
 	}
 
-	long ServerSocket::recvNote(int sockfd,void buf,size_t size){
+	long ServerSocket::recvNote(int sockfd,void* buf,size_t size){
 		ssize_t recvSize = recv(sockfd, buf, size, 0);
 		return recvSize;
 	}
 
-	int ServerSocket::CloseServer(){
+	int ServerSocket::CloseServer(int clnt_sock){
 
 		close(clnt_sock);
-    close(serv_sock);
+    	close(this->sockfd);
 
-    return 1;
+    	return 1;
 	}
 }

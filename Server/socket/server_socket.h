@@ -1,19 +1,23 @@
+#ifndef Included_NameModel_H
+
+#define Included_NameModel_H
+
 #include <string>
 #include <netdb.h>
 #include <sys/socket.h>
 
 namespace GeniusNote{
-	class Server
+	class ServerSocket
 	{
 		public:
 			int init(int port);
 			int startServer();
 			int acceptCon();
 
-			int sendNote();
-			long recvNote();
+			int sendNote(int sockfd,void* buf,size_t size);
+			long recvNote(int sockfd,void* buf,size_t size);
 
-			int CloseServer();
+			int CloseServer(int clnt_sock);
 
 		private:
 			int port;
@@ -21,3 +25,5 @@ namespace GeniusNote{
 			sockaddr_in serverAddr;
 	};
 }
+
+#endif

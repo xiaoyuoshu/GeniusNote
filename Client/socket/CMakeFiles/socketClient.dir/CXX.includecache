@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/geniusrabbit/home/GeniusNote/Client/socket/socket_client.h
+string
+-
+netdb.h
+-
+sys/socket.h
+-
+
+/home/geniusrabbit/home/GeniusNote/Client/socket/testfile.cpp
+socket_client.h
+/home/geniusrabbit/home/GeniusNote/Client/socket/socket_client.h
+iostream
+-
+

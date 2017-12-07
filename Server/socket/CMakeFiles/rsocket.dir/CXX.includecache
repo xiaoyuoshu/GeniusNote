@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/geniusrabbit/home/GeniusNote/Server/socket/server_socket.cpp
+server_socket.h
+/home/geniusrabbit/home/GeniusNote/Server/socket/server_socket.h
+cstdio
+-
+sys/types.h
+-
+sys/wait.h
+-
+unistd.h
+-
+netinet/in.h
+-
+arpa/inet.h
+-
+thread
+-
+cstring
+-
+server_socket.h
+/home/geniusrabbit/home/GeniusNote/Server/socket/server_socket.h
+
+/home/geniusrabbit/home/GeniusNote/Server/socket/server_socket.h
+string
+-
+netdb.h
+-
+sys/socket.h
+-
+

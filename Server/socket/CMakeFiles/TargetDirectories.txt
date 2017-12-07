@@ -1,0 +1,4 @@
+/home/geniusrabbit/home/GeniusNote/Server/socket/CMakeFiles/edit_cache.dir
+/home/geniusrabbit/home/GeniusNote/Server/socket/CMakeFiles/socketTest.dir
+/home/geniusrabbit/home/GeniusNote/Server/socket/CMakeFiles/rebuild_cache.dir
+/home/geniusrabbit/home/GeniusNote/Server/socket/CMakeFiles/rsocket.dir

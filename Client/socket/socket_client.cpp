@@ -1,14 +1,17 @@
-#include <stdio.h>
-#include <sys/socket.h>
+#include <cstdio>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <unistd.h>
 #include <netinet/in.h>
-#include <string.h>
 #include <arpa/inet.h>
+#include <thread>
+#include <cstring>
 
-#include "Socket.h"
-#include "../log/log.h"
+#include "socket_client.h"
+//#include "../log/log.h"
 
 namespace GeniusNote{
-	int ClientSocket::init(int port){
+		int ClientSocket::init(int port){
 		in_addr_t clientIP = inet_addr("0.0.0.0");
 		int sockfd = socket(AF_INET, SOCK_STREAM, 0);
 
@@ -39,17 +42,17 @@ namespace GeniusNote{
 
   	int flag = connect(this->sockfd,(const struct sockaddr *)&server,(socklen_t)sizeof(server));
   	
-  	this->serversockAddr = server;
+  	this->serverSockAddr = server;
 
   	return flag;
 	}
 
-	long ClientSocket::send(void *buf, size_t size){
+	long ClientSocket::csend(void *buf, size_t size){
 		ssize_t sendSize = send(sockfd, buf, size, 0);
 		return sendSize;
 	}
 
-	int ClientSocket::recv(void *buf, size_t size){
+	int ClientSocket::crecv(void *buf, size_t size){
 		ssize_t recvSize = recv(sockfd, buf, size, 0);
 		return recvSize;
 	}
