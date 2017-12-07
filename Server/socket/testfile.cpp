@@ -5,6 +5,7 @@ char buf[50];
 using namespace GeniusNote;
 
 int main(int argc,char* argv[]){
+	printf("run success!\n");
 	ServerSocket server;
 
 	int sockfd = server.init(1234);

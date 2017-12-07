@@ -17,9 +17,9 @@ namespace GeniusNote{
 
 		int sockfd = socket(AF_INET, SOCK_STREAM, 0);
 		if(sockfd==-1){
-			printf("create socket fault");
+			printf("create socket fault\n");
 		}else{
-			printf("create socket success");
+			printf("create socket success\n");
 		}
 
 		sockaddr_in clientSockAddr;
@@ -31,9 +31,9 @@ namespace GeniusNote{
 
   	int flag = bind(sockfd, (sockaddr* )&clientSockAddr, sizeof(clientSockAddr));
   	if(flag==-1){
-			printf("bind fault");
+			printf("bind fault\n");
 		}else{
-			printf("bind success");
+			printf("bind success\n");
 		}
 
   	this->port=htons(port);
@@ -54,9 +54,9 @@ namespace GeniusNote{
 
   	int flag = connect(this->sockfd,(const struct sockaddr *)&server,(socklen_t)sizeof(server));
   	if(flag==-1){
-			printf("connect fault");
+			printf("connect fault\n");
 		}else{
-			printf("connect success");
+			printf("connect success\n");
 		}
   	this->serverSockAddr = server;
 

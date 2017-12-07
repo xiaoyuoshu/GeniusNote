@@ -15,11 +15,13 @@
 namespace GeniusNote{
 	
 	int ServerSocket::init(int port){
+		
 		int sockfd = socket(AF_INET,SOCK_STREAM,IPPROTO_TCP);
+
 		if(sockfd==-1){
-			printf("create socket fault");
+			printf("create socket fault\n");
 		}else{
-			printf("create socket success");
+			printf("create socket success\n");
 		}
 
 		struct sockaddr_in serv_addr;
@@ -41,9 +43,9 @@ namespace GeniusNote{
 	int ServerSocket::startServer(){
 		int flag = listen(this->sockfd,this->port);
 		if(flag==-1){
-			printf("listen fault");
+			printf("listen fault\n");
 		}else{
-			printf("listen success");
+			printf("listen success\n");
 		}
 
 		return flag;
@@ -55,9 +57,9 @@ namespace GeniusNote{
 
     	int clientfd = accept(this->sockfd,(struct sockaddr*)&clnt_addr,&clnt_addr_size);
     	if(clientfd==-1){
-			printf("accept fault");
+			printf("accept fault\n");
 		}else{
-			printf("accept success");
+			printf("accept success\n");
 		}
 
     	return clientfd;
