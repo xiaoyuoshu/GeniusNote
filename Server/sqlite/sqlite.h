@@ -22,10 +22,11 @@ namespace GeniusNote{
 
 			int deleteNote(void* bufin);
 
-			char** reNote();
+			int reNote();
+			//char **bufout=(char**)malloc(sizeof(char*));
 
 		private:
-			char **bufout=(char**)malloc(sizeof(char*));
+			
 			const char* name;
 	};
 }

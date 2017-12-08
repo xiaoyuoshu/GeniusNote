@@ -15,6 +15,8 @@ string
 -
 malloc.h
 -
+string.h
+-
 sqlite.h
 /home/geniusrabbit/home/GeniusNote/Server/sqlite/sqlite.h
 
