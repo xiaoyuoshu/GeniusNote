@@ -1,4 +1,4 @@
-/home/geniusrabbit/home/GeniusNote/Server/sqlite/CMakeFiles/edit_cache.dir
-/home/geniusrabbit/home/GeniusNote/Server/sqlite/CMakeFiles/socketTest.dir
 /home/geniusrabbit/home/GeniusNote/Server/sqlite/CMakeFiles/rebuild_cache.dir
-/home/geniusrabbit/home/GeniusNote/Server/sqlite/CMakeFiles/rsocket.dir
+/home/geniusrabbit/home/GeniusNote/Server/sqlite/CMakeFiles/edit_cache.dir
+/home/geniusrabbit/home/GeniusNote/Server/sqlite/CMakeFiles/sqliteTest.dir
+/home/geniusrabbit/home/GeniusNote/Server/sqlite/CMakeFiles/rsqlite.dir

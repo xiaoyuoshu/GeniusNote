@@ -1,16 +1,26 @@
+#ifndef Included_NameModel_H
+
+#define Included_NameModel_H
+
 #include  <sqlite3.h>
-#include <stdio.h>
-#include <string.h>
+#include <cstdio>
+#include <string>
+
 
 namespace GeniusNote{
-	class Sqliet{
+	class Sqlite
+	{
 		public:
-			void init(char* name);
-			void open();
+			void init(string& name);
+			void open(string& name);
 			int addNote(void* bufin);
 			int deleteNote(void* bufin);
-			int reNote(char buf[][10]);
-			
-			
-	}
+			char** reNote();
+
+		private:
+			char bufout[200][10];
+			const std::string& name;
+	};
 }
+
+#endif

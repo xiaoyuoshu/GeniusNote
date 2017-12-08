@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/geniusrabbit/home/GeniusNote/Server/sqlite
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -77,6 +66,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,30 +111,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named socketTest
+# Target rules for targets named sqliteTest
 
 # Build rule for target.
-socketTest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 socketTest
-.PHONY : socketTest
+sqliteTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sqliteTest
+.PHONY : sqliteTest
 
 # fast build rule for target.
-socketTest/fast:
-	$(MAKE) -f CMakeFiles/socketTest.dir/build.make CMakeFiles/socketTest.dir/build
-.PHONY : socketTest/fast
+sqliteTest/fast:
+	$(MAKE) -f CMakeFiles/sqliteTest.dir/build.make CMakeFiles/sqliteTest.dir/build
+.PHONY : sqliteTest/fast
 
 #=============================================================================
-# Target rules for targets named rsocket
+# Target rules for targets named rsqlite
 
 # Build rule for target.
-rsocket: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 rsocket
-.PHONY : rsocket
+rsqlite: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rsqlite
+.PHONY : rsqlite
 
 # fast build rule for target.
-rsocket/fast:
-	$(MAKE) -f CMakeFiles/rsocket.dir/build.make CMakeFiles/rsocket.dir/build
-.PHONY : rsocket/fast
+rsqlite/fast:
+	$(MAKE) -f CMakeFiles/rsqlite.dir/build.make CMakeFiles/rsqlite.dir/build
+.PHONY : rsqlite/fast
 
 sqlite.o: sqlite.cpp.o
 
@@ -142,7 +142,7 @@ sqlite.o: sqlite.cpp.o
 
 # target to build an object file
 sqlite.cpp.o:
-	$(MAKE) -f CMakeFiles/rsocket.dir/build.make CMakeFiles/rsocket.dir/sqlite.cpp.o
+	$(MAKE) -f CMakeFiles/rsqlite.dir/build.make CMakeFiles/rsqlite.dir/sqlite.cpp.o
 .PHONY : sqlite.cpp.o
 
 sqlite.i: sqlite.cpp.i
@@ -151,7 +151,7 @@ sqlite.i: sqlite.cpp.i
 
 # target to preprocess a source file
 sqlite.cpp.i:
-	$(MAKE) -f CMakeFiles/rsocket.dir/build.make CMakeFiles/rsocket.dir/sqlite.cpp.i
+	$(MAKE) -f CMakeFiles/rsqlite.dir/build.make CMakeFiles/rsqlite.dir/sqlite.cpp.i
 .PHONY : sqlite.cpp.i
 
 sqlite.s: sqlite.cpp.s
@@ -160,7 +160,7 @@ sqlite.s: sqlite.cpp.s
 
 # target to generate assembly for a file
 sqlite.cpp.s:
-	$(MAKE) -f CMakeFiles/rsocket.dir/build.make CMakeFiles/rsocket.dir/sqlite.cpp.s
+	$(MAKE) -f CMakeFiles/rsqlite.dir/build.make CMakeFiles/rsqlite.dir/sqlite.cpp.s
 .PHONY : sqlite.cpp.s
 
 testfile.o: testfile.cpp.o
@@ -169,7 +169,7 @@ testfile.o: testfile.cpp.o
 
 # target to build an object file
 testfile.cpp.o:
-	$(MAKE) -f CMakeFiles/socketTest.dir/build.make CMakeFiles/socketTest.dir/testfile.cpp.o
+	$(MAKE) -f CMakeFiles/sqliteTest.dir/build.make CMakeFiles/sqliteTest.dir/testfile.cpp.o
 .PHONY : testfile.cpp.o
 
 testfile.i: testfile.cpp.i
@@ -178,7 +178,7 @@ testfile.i: testfile.cpp.i
 
 # target to preprocess a source file
 testfile.cpp.i:
-	$(MAKE) -f CMakeFiles/socketTest.dir/build.make CMakeFiles/socketTest.dir/testfile.cpp.i
+	$(MAKE) -f CMakeFiles/sqliteTest.dir/build.make CMakeFiles/sqliteTest.dir/testfile.cpp.i
 .PHONY : testfile.cpp.i
 
 testfile.s: testfile.cpp.s
@@ -187,7 +187,7 @@ testfile.s: testfile.cpp.s
 
 # target to generate assembly for a file
 testfile.cpp.s:
-	$(MAKE) -f CMakeFiles/socketTest.dir/build.make CMakeFiles/socketTest.dir/testfile.cpp.s
+	$(MAKE) -f CMakeFiles/sqliteTest.dir/build.make CMakeFiles/sqliteTest.dir/testfile.cpp.s
 .PHONY : testfile.cpp.s
 
 # Help Target
@@ -196,10 +196,10 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
-	@echo "... socketTest"
 	@echo "... rebuild_cache"
-	@echo "... rsocket"
+	@echo "... edit_cache"
+	@echo "... sqliteTest"
+	@echo "... rsqlite"
 	@echo "... sqlite.o"
 	@echo "... sqlite.i"
 	@echo "... sqlite.s"

@@ -1,0 +1,2 @@
+/usr/bin/ar qc librsqlite.a  CMakeFiles/rsqlite.dir/sqlite.cpp.o
+/usr/bin/ranlib librsqlite.a

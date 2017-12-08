@@ -1,25 +1,24 @@
 
 #include  <sqlite3.h>
-#include <stdio.h>
-#include <string.h>
+#include <cstdio>
+#include <string>
 
 sqlite3 *db=NULL;
 char *zErrMsg=NULL;
 int ret=0;
 
-void bufout[200][10];
-
 namespace GeniusNote{
-	static int callback(void *NotUsed,int argc,char **argv,char **azColName){
+	static int Sqlite::callback(void *NotUsed,int argc,char **argv,char **azColName){
     int i;
     for(i=0;i<argc;i++){
-        bufout[i]=argv[i];
+        this->bufout[i]=argv[i];
     }
     return 0;
   }
 
-	void Sqlite::init(char* name){
-		ret = sqlite3_open(name+".db",&db);
+	void Sqlite::init(string& name){
+		name.append(".db");
+		ret = sqlite3_open(name,&db);
 		if(ret!=SQLITE_OK){
         fprintf(stderr,"SQL error:%s\n",zErrMsg);
         sqlite3_free(zErrMsg);
@@ -33,9 +32,13 @@ namespace GeniusNote{
 
 
 	}
-	void Sqlite::open(){
+	void Sqlite::open(string& name){
 
-		ret = sqlite3_open("youxiang"+".db",&db);
+		name.append(".db");
+
+		this->name=name;
+
+		ret = sqlite3_open(name,&db);
 		if(ret!=SQLITE_OK){
       fprintf(stderr,"SQL error:%s\n",zErrMsg);
       sqlite3_free(zErrMsg);
@@ -45,7 +48,7 @@ namespace GeniusNote{
 
 	}
 	int Sqlite::addNote(void* bufin){
-		ret = sqlite3_open("youxiang"+".db",&db);
+		ret = sqlite3_open(this->name+".db",&db);
 		if(ret!=SQLITE_OK){
       fprintf(stderr,"SQL error:%s\n",zErrMsg);
       sqlite3_free(zErrMsg);
@@ -69,7 +72,7 @@ namespace GeniusNote{
 
 	}
 	int Sqlite::deleteNote(void* bufin){
-		ret = sqlite3_open("youxiang"+".db",&db);
+		ret = sqlite3_open(this->name+".db",&db);
 
 		if(ret!=SQLITE_OK){
       fprintf(stderr,"SQL error:%s\n",zErrMsg);
@@ -79,7 +82,7 @@ namespace GeniusNote{
     }
 
 		char *sql= sqlite3_mprintf("DELETE from NOTE where NOTE=%s ;" \
-            "SELECT * from STUDENT",NOTE);
+            "SELECT * from STUDENT",bufin);
 
     ret =sqlite3_exec(db,sql,callback,0,&zErrMsg);
 
@@ -95,8 +98,8 @@ namespace GeniusNote{
 
     return 1;
 	}
-	int Sqlite::reNote(char buf[][10]){
-		ret=sqlite3_open("student.db",&db);
+	char** Sqlite::reNote(char buf[][10]){
+		ret=sqlite3_open(this->name+".db",&db);
 
     char* sql = "SELECT * from NOTE";
     ret = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
@@ -107,9 +110,10 @@ namespace GeniusNote{
     }else{
         fprintf(stdout,"read success\n");
     }
-    buf=bufout;
+    buf=this->bufout;
     //关闭数据库
     sqlite3_close(db);
 
+    return this->bufout;
 	}
 }

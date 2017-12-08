@@ -41,6 +41,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/socketTest.dir/DependInfo.cmake"
-  "CMakeFiles/rsocket.dir/DependInfo.cmake"
+  "CMakeFiles/sqliteTest.dir/DependInfo.cmake"
+  "CMakeFiles/rsqlite.dir/DependInfo.cmake"
   )
