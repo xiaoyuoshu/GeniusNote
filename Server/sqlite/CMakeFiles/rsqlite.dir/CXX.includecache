@@ -13,4 +13,14 @@ cstdio
 -
 string
 -
+malloc.h
+-
+sqlite.h
+/home/geniusrabbit/home/GeniusNote/Server/sqlite/sqlite.h
+
+/home/geniusrabbit/home/GeniusNote/Server/sqlite/sqlite.h
+sqlite3.h
+-
+string
+-
 

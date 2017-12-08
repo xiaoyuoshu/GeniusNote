@@ -1,1 +1,1 @@
-/usr/bin/c++      CMakeFiles/sqliteTest.dir/testfile.cpp.o  -o sqliteTest -rdynamic librsqlite.a 
+/usr/bin/c++      CMakeFiles/sqliteTest.dir/testfile.cpp.o  -o sqliteTest -rdynamic librsqlite.a -lsqlite3 

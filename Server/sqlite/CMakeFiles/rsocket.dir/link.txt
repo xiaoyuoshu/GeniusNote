@@ -1,2 +1,0 @@
-/usr/bin/ar qc librsocket.a  CMakeFiles/rsocket.dir/sqlite.cpp.o
-/usr/bin/ranlib librsocket.a

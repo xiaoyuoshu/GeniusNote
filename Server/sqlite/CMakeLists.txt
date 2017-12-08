@@ -15,5 +15,5 @@ add_library(rsqlite ${DIR_LIB_SRCS})
 
 add_executable(sqliteTest testfile.cpp)
 
-target_link_libraries(sqliteTest rsqlite)
+target_link_libraries(sqliteTest rsqlite ${SQLITELIB})
 

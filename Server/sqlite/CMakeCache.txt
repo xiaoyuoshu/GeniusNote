@@ -169,16 +169,7 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 SQLITELIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libsqlite3.so
 
 //Dependencies for target
-rsocket_LIB_DEPENDS:STATIC=
-
-//Dependencies for target
 rsqlite_LIB_DEPENDS:STATIC=
-
-//Value Computed by CMake
-sqlietTest_BINARY_DIR:STATIC=/home/geniusrabbit/home/GeniusNote/Server/sqlite
-
-//Value Computed by CMake
-sqlietTest_SOURCE_DIR:STATIC=/home/geniusrabbit/home/GeniusNote/Server/sqlite
 
 //Value Computed by CMake
 sqliteTest_BINARY_DIR:STATIC=/home/geniusrabbit/home/GeniusNote/Server/sqlite

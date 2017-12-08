@@ -91,6 +91,7 @@ sqliteTest_EXTERNAL_OBJECTS =
 sqliteTest: CMakeFiles/sqliteTest.dir/testfile.cpp.o
 sqliteTest: CMakeFiles/sqliteTest.dir/build.make
 sqliteTest: librsqlite.a
+sqliteTest: /usr/lib/x86_64-linux-gnu/libsqlite3.so
 sqliteTest: CMakeFiles/sqliteTest.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/geniusrabbit/home/GeniusNote/Server/sqlite/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable sqliteTest"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sqliteTest.dir/link.txt --verbose=$(VERBOSE)

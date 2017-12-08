@@ -6,7 +6,17 @@
 
 #IncludeRegexTransform: 
 
+/home/geniusrabbit/home/GeniusNote/Server/sqlite/sqlite.h
+sqlite3.h
+-
+string
+-
+
 /home/geniusrabbit/home/GeniusNote/Server/sqlite/testfile.cpp
 iostream
+-
+sqlite.h
+/home/geniusrabbit/home/GeniusNote/Server/sqlite/sqlite.h
+sqlite3.h
 -
 
